@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{% for x in fruits %}
+
+  <h1>{{ x }}</h1>
+
+{% endfor %}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+<p><a href="/">HOME</a></p>
+<h3>first name is = {{firstname}}</h3>
+
+
+<!-- passing values dirsect in html template -->
+{% with firstname="Tobias" %}
+
+<h4>Hello {{ firstname }}, how are you?</h4>  
+
+{% endwith %}
+<!-- passing values dirsect in html template -->
+
+<ul>
+    {% for x in mymembers %}
+      <li>{{ x.firstname }} &nbsp;&nbsp;&nbsp; {{x.lastname}}&nbsp;&nbsp;&nbsp; {{x.join_date}}&nbsp;&nbsp;&nbsp; {{x.phone}}</li>
+    {% endfor %}
+</ul>
+
+{% if val == 1 %}
+  <h1>Hello</h1>
+{% elif val == 2 %}
+  <h1>Welcome</h1>
+{% else %}
+  <h1>Goodbye</h1>
+{% endif %} 
+
+</body>
+</html>
