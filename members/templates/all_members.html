@@ -6,19 +6,19 @@
 
 
 {% block content %}
- <p><a href="/">HOME</a></p>
-
-  <h1>Members</h1>
-  
-  <table border='2'>
-    <tr>
-      <th>ID</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Join Date</th>
-      <th>Phone</th>
-    </tr>
-    {% for x in mymembers %}
+  <h3>Members</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Join Date</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in mymembers %}
       <tr>
         <td>{{ x.id }}</td>
         <td>{{ x.firstname }}</td>
@@ -28,6 +28,7 @@
         
       </tr>
     {% endfor %}
+    </tbody>
   </table>
 {% endblock %}
 

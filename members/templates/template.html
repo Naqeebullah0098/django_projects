@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "master.html" %}
+
+{% block content %}
+{% if val == 1 %}
+  <h1>Hello</h1>
+{% elif val == 2 %}
+  <h1 style="justify-content:center">Welcome</h1>
+{% else %}
+  <h1>Goodbye</h1>
+{% endif %} 
 
 {% for x in fruits %}
 
-  <h1>{{ x }}</h1>
+  <p><b>{{ x }}</b></p>
 
 {% endfor %}
 
@@ -20,20 +27,13 @@
 
 {% endwith %}
 <!-- passing values dirsect in html template -->
-
+<h6>List Of Members are given below</h6>
 <ul>
     {% for x in mymembers %}
       <li>{{ x.firstname }} &nbsp;&nbsp;&nbsp; {{x.lastname}}&nbsp;&nbsp;&nbsp; {{x.join_date}}&nbsp;&nbsp;&nbsp; {{x.phone}}</li>
     {% endfor %}
 </ul>
 
-{% if val == 1 %}
-  <h1>Hello</h1>
-{% elif val == 2 %}
-  <h1>Welcome</h1>
-{% else %}
-  <h1>Goodbye</h1>
-{% endif %} 
 
-</body>
-</html>
+
+{% endblock %}
